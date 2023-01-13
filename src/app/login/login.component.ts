@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +12,27 @@ export class LoginComponent {
   data = "enter account number"
   acno=""
   psw=""
+  
+  constructor(private router:Router,private ds:DataService ){ }
 
+  login() {
+    var acno=this.acno
+    var psw=this.psw
 
-
-  userDetails: any = {
-    1000: { acno: 1000, username: "anu", password: 123, balance: 0 },
-    1001: { acno: 1001, username: "vismaya", password: 123, balance: 0 },
-    1002: { acno: 1002, username: "aparna", password: 123, balance: 0 },
-    1003: { acno: 1003, username: "nidhin", password: 123, balance: 0 }
+    const result=this.ds.login(acno,psw)
+    if(result){
+      alert("you are successfully login")
+      this.router.navigateByUrl("dashboard")
+    }
+    else{
+      alert('Invalid Username or Password')
+    }
   }
-  // login() {
+    
+  // login(a:any,b:any) {
+  //    this.acno=a.value
+  //    this.psw=b.value
+
   //   var acno=this.acno
   //   var psw=this.psw
   //   var userDetails=this.userDetails
@@ -35,29 +48,7 @@ export class LoginComponent {
   //   else{
   //     alert("The user doesn't exist")
   //   }
-
-  //   // alert("login clicked")
   // }
-  login(a:any,b:any) {
-     this.acno=a.value
-     this.psw=b.value
-
-    var acno=this.acno
-    var psw=this.psw
-    var userDetails=this.userDetails
-    
-    if (acno in userDetails){
-      if(psw==userDetails[acno]["password"]){
-        alert("you are successfully login")
-      }
-      else{
-        alert("you entered wrong password")
-      }
-    }
-    else{
-      alert("The user doesn't exist")
-    }
-  }
 
 //   acnoChange(event: any) {
 //     this.acno=event.target.value

@@ -4,20 +4,20 @@
 <div class="text-center text-white">
 
 </div>
-<form>
+<form (ngSubmit)="login()">
     <div class="container w-25 border mt-5 p-3" style="background: transparent; border-radius: 25px;">
         <h1 class="text-center text-white">Login Page</h1>
         <div class="mt-2 p-2">
-            <input name="acno" #acno type="text" [placeholder]="data" class="form-control" id="acid">
+            <input name="acno" [(ngModel)]="acno" type="text" [placeholder]="data" class="form-control" id="acid">
 
         </div>
         <div class="mt-2 p-2">
-            <input name="psw" #psw type="password" placeholder="password" class="form-control" id="pid">
+            <input name="psw" [(ngModel)]="psw" type="password" placeholder="password" class="form-control" id="pid">
 
         </div>
         <div class="text-center mt-2 p-2">
-            <button type="submit" (click)="login(acno,psw)" class="btn btn-success">Login</button> <br><br>
-            <p class="text-white">new user?<a style="text-decoration: none;">register</a></p>
+            <button type="submit"    class="btn btn-success">Login</button> <br><br>
+            <p class="text-white">new user?<a routerLink="register"> register</a>  </p>
 
         </div>
 

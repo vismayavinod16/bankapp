@@ -16,3 +16,56 @@ html-view
       1.2.1 event binding           (eventname)="method name()"  
       1.2.2 event binding using $   {event name}="method name($ event)"
       1.2.3 event binding using template rendering variable     #variable
+
+
+2.Two way binding
+   2.1 ngmodel        [{ngmodel}]="value"
+                      FormsModule
+
+
+REDIRECTION IN ANGULAR 
+----------------------
+
+navigateByUrl    -  method used to redirection
+
+Router           - class
+
+AppRoutingModule - module
+
+Dependency injection
+----------------------
+-> to use a method of class in another class
+-> in constructor
+
+STEPS--   accessspecifer -public/private
+         arguement( private  variable(any variable you like) : Class name (starts with capital letter)
+
+
+
+ANGULAR SERVICES
+----------------
+-> to create device 
+ng generate service name  
+ eg:(ng g s data)
+
+/ is used to back to which page we want
+
+ANGULAR DIRECTIVES
+---------------------
+
+1.structural DIRECTIVES to handle structured data in view of a  componenet(collections:-array ,objects)
+   -ngFor  can directly apply in a html to access elements from  array
+
+ FORM VALIDATION IN ANGULAR
+-----------------------------
+
+we can create forms in two ways
+1.template driven form
+2.model driven form
+
+
+
+
+
+
+
